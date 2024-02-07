@@ -39,12 +39,7 @@
     gap: 7px;
 }
 
-span.message1 {
-    color: green;
-}
-span.message2 {
-    color: red;
-}
+
 .input input {
     padding: 10px;
     background-color: rgba(238, 228, 236, 0.5);
@@ -54,8 +49,32 @@ span.message2 {
     color: brown;
     font-weight: lighter;
 }
+.input input[type=password]
 
-.button {
+input:invalid:focus {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+    display: none;
+}
+input:invalid:focus + .error {
+    display: block;
+}
+
+input:valid:focus {
+    border: 1px solid rgba(21, 190, 21) ;
+}
+.success {
+    color: rgb(21, 190, 21);
+    display: none;
+}
+input:valid:focus + .success {
+    display: block;
+}
+
+#button{
     padding: 10px;
     color: white;
     background-color: rgba(65, 4, 47, 0.5);
@@ -64,6 +83,19 @@ span.message2 {
     outline: none;
     cursor: pointer;
 }
-.button:hover {
+#button:hover {
     background-color: rgba(65, 4, 47, 1);
 }
+
+
+
+
+@media screen and (max-width:768px) {
+    input {
+        width: 300px;
+    }
+}
+@media screen and (max-width:600px) {
+    input {
+        width: 250px;
+    }
